@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropType from "prop-types";
+
+
 export default function Room({ room }) {
   console.log(room);
   const { name, slug, images, price } = room;
