@@ -33,7 +33,11 @@ export default function RoomFilter({ rooms }) {
   });
   let people = getUnique(rooms, "capacity");
   people = people.map((item, index) => {
-    return <option key={index} value={item}>{item}</option>
+    return (
+      <option key={index} value={item}>
+        {item}
+      </option>
+    );
   });
 
   return (
@@ -63,6 +67,19 @@ export default function RoomFilter({ rooms }) {
           >
             {people}
           </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="price">room price ${price}</label>
+          <input
+            type="range"
+            name="price"
+            id="price"
+            min={minPrice}
+            max={maxPrice}
+            value={price}
+            className="form-control"
+            onChange={handleChange}
+          />
         </div>
       </form>
     </section>
